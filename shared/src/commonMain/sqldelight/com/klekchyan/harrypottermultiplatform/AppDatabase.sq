@@ -1,0 +1,31 @@
+CREATE TABLE CharacterDTO (
+    id              TEXT NOT NULL PRIMARY KEY,
+    name            TEXT NOT NULL,
+    species         TEXT NOT NULL
+);
+
+CREATE TABLE WandDTO (
+    id              INTEGER NOT NULL DEFAULT 0 PRIMARY KEY AUTOINCREMENT ,
+    wood            TEXT NOT NULL,
+    core            TEXT NOT NULL,
+    length          REAL,
+    character_id    TEXT NOT NULL
+);
+
+insertCharacter:
+INSERT OR REPLACE INTO CharacterDTO(id, name, species)
+VALUES (?, ?, ?);
+
+insertWand:
+INSERT OR REPLACE INTO WandDTO(wood, core, length, character_id)
+VALUES (?, ?, ?, ?);
+
+getCharacters:
+SELECT * FROM CharacterDTO AS character
+LEFT JOIN WandDTO AS wand ON wand.character_id = character.id;
+
+deleteWands:
+DELETE FROM WandDTO;
+
+deleteCharacters:
+DELETE FROM CharacterDTO;
