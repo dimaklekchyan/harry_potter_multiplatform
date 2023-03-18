@@ -13,7 +13,7 @@ data class Character(
 //    val ancestry: String,
 //    val eyeColour: String,
 //    val hairColour: String,
-    val wand: Wand,
+    val wand: Wand?,
 //    val patronus: String,
 //    val hogwartsStudent: Boolean,
 //    val hogwartsStaff: Boolean,

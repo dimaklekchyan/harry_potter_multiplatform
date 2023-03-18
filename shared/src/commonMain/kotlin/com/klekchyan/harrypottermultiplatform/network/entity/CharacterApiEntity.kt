@@ -17,7 +17,7 @@ data class CharacterApiEntity(
 //    val ancestry: String,
 //    val eyeColour: String,
 //    val hairColour: String,
-//    val wand: WandApiEntity,
+    val wand: WandApiEntity? = null,
 //    val patronus: String,
 //    val hogwartsStudent: Boolean,
 //    val hogwartsStaff: Boolean,
