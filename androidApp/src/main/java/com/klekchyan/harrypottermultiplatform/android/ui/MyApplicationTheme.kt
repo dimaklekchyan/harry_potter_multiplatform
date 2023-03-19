@@ -1,4 +1,4 @@
-package com.klekchyan.harrypottermultiplatform.android
+package com.klekchyan.harrypottermultiplatform.android.ui
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

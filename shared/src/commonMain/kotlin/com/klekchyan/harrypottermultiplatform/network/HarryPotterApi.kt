@@ -25,7 +25,8 @@ private val httpClient = HttpClient {
     }
 }
 
-class HarryPotterApi(private val client: HttpClient) {
+class HarryPotterApi() {
+    private val client = httpClient
     suspend fun getAllCharacters(): List<CharacterApiEntity> {
         return client.get("characters").body<List<CharacterApiEntity>>()
     }
