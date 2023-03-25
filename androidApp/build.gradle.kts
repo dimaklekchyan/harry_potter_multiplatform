@@ -17,7 +17,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.0"
+        kotlinCompilerExtensionVersion = Dependencies.Compose.compilerVersion
     }
     packagingOptions {
         resources {
@@ -40,12 +40,16 @@ android {
 
 dependencies {
     implementation(project(":shared"))
-    implementation("androidx.compose.ui:ui:1.3.1")
-    implementation("androidx.compose.ui:ui-tooling:1.3.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.3.1")
-    implementation("androidx.compose.foundation:foundation:1.3.1")
-    implementation("androidx.compose.material:material:1.3.1")
-    implementation("androidx.activity:activity-compose:1.6.1")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation(Dependencies.Compose.ui)
+    implementation(Dependencies.Compose.toolingUi)
+    implementation(Dependencies.Compose.toolingPreview)
+    implementation(Dependencies.Compose.foundation)
+    implementation(Dependencies.Compose.material)
+    implementation(Dependencies.Compose.activity)
+
+    implementation(Dependencies.Kotlin.coroutinesAndroid)
+
+    implementation(Dependencies.Kodein.frameworkAndroid)
+    implementation(Dependencies.Kodein.frameworkCompose)
 }
