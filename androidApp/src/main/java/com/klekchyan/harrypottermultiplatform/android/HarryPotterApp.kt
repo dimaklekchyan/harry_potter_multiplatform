@@ -1,18 +1,18 @@
 package com.klekchyan.harrypottermultiplatform.android
 
 import android.app.Application
-import android.content.Context
-import org.kodein.di.DI
-import org.kodein.di.DIAware
-import org.kodein.di.android.androidCoreContextTranslators
-import org.kodein.di.android.x.androidXModule
-import org.kodein.di.bindProvider
+import com.klekchyan.harrypottermultiplatform.PlatformSDK
+import com.klekchyan.harrypottermultiplatform.platform.PlatformConfiguration
 
-class HarryPotterApp: Application(), DIAware {
-    override val di: DI by DI.lazy {
-        bindProvider<Context>(tag = "ApplicationContext") { this@HarryPotterApp }
+class HarryPotterApp: Application() {
+    override fun onCreate() {
+        super.onCreate()
 
-        import(androidCoreContextTranslators)
-        import(androidXModule(this@HarryPotterApp))
+        initPlatformSDK()
     }
 }
+
+fun HarryPotterApp.initPlatformSDK() =
+    PlatformSDK.init(
+        platformConfiguration = PlatformConfiguration(applicationContext)
+    )

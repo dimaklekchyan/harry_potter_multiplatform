@@ -4,10 +4,18 @@ object Dependencies {
         const val version = "1.8.10"
         private const val coroutinesVersion = "1.6.4"
         private const val serializationVersion = "1.4.1"
+        private const val serializationGradlePluginVersion = "1.7.10"
+
+        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
+        const val serializationGradlePlugin = "org.jetbrains.kotlin:kotlin-serialization:$serializationGradlePluginVersion"
 
         const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion"
         const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
         const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    }
+
+    object Android {
+        const val gradlePlugin = "com.android.tools.build:gradle:7.2.2"
     }
 
     object Compose {
@@ -18,6 +26,8 @@ object Dependencies {
         const val compilerVersion = "1.4.4"
         private const val constraintLayoutVersion = "1.0.1"
         private const val activityVersion = "1.4.0"
+
+        const val gradlePlugin = "org.jetbrains.compose:compose-gradle-plugin:1.4.0-alpha01-dev980"
 
         const val ui = "androidx.compose.ui:ui:$uiVersion"
         const val foundation = "androidx.compose.foundation:foundation:$foundationVersion"
@@ -52,12 +62,27 @@ object Dependencies {
     }
 
     object SQLDelight {
-        private const val version = "1.5.4"
+        private const val version = "1.5.5"
+
+        const val gradlePlugin = "com.squareup.sqldelight:gradle-plugin:$version"
 
         const val runtime = "com.squareup.sqldelight:runtime:$version"
         const val androidDriver = "com.squareup.sqldelight:android-driver:$version"
         const val nativeDriver = "com.squareup.sqldelight:native-driver:$version"
         const val coroutinesExtension = "com.squareup.sqldelight:coroutines-extensions-jvm:$version"
+    }
+
+    object KViewModel {
+        private const val version = "0.14"
+        const val core = "com.adeo:kviewmodel:$version"
+        const val compose = "com.adeo:kviewmodel-compose:$version"
+        const val odyssey = "com.adeo:kviewmodel-odyssey:$version"
+    }
+
+    object Odyssey {
+        private const val version = "1.3.1"
+        const val core = "io.github.alexgladkov:odyssey-core:$version"
+        const val compose = "io.github.alexgladkov:odyssey-compose:$version"
     }
 
     object Lifecycle {

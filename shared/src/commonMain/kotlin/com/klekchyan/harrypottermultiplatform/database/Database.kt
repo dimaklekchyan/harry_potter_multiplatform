@@ -1,4 +1,4 @@
-package com.klekchyan.harrypottermultiplatform.cache
+package com.klekchyan.harrypottermultiplatform.database
 
 import com.klekchyan.harrypottermultiplatform.entity.Character
 import com.klekchyan.harrypottermultiplatform.entity.Wand
@@ -8,7 +8,7 @@ import com.klekchyan.harrypottermultiplatform.shared.cache.AppDatabase
 import com.klekchyan.harrypottermultiplatform.utils.allNotNull
 
 class Database(databaseDriverFactory: DatabaseDriverFactory) {
-    private val database = AppDatabase(databaseDriverFactory.createDriver())
+    private val database = AppDatabase(databaseDriverFactory.createDriver(AppDatabase.Schema, "app_database.db"))
     private val queries = database.appDatabaseQueries
 
     internal fun getAllCharacters(): List<Character> {

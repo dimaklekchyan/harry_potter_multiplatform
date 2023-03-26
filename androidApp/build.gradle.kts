@@ -52,4 +52,5 @@ dependencies {
 
     implementation(Dependencies.Kodein.frameworkAndroid)
     implementation(Dependencies.Kodein.frameworkCompose)
+    implementation(Dependencies.Kodein.di)
 }

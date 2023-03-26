@@ -1,6 +1,6 @@
 package com.klekchyan.harrypottermultiplatform.repository
 
-import com.klekchyan.harrypottermultiplatform.cache.Database
+import com.klekchyan.harrypottermultiplatform.database.Database
 import com.klekchyan.harrypottermultiplatform.entity.Character
 import com.klekchyan.harrypottermultiplatform.network.HarryPotterApi
 

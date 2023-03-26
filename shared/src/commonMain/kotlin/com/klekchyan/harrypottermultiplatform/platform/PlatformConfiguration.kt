@@ -1,0 +1,3 @@
+package com.klekchyan.harrypottermultiplatform.platform
+
+expect class PlatformConfiguration
