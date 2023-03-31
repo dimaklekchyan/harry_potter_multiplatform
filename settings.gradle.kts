@@ -4,22 +4,6 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
     }
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:7.2.2")
-            }
-            if (requested.id.id.startsWith("org.jetbrains.kotlin")) {
-                useVersion("1.8.10")
-            }
-            if (requested.id.id.startsWith("org.jetbrains.compose")) {
-                useVersion("1.4.0-alpha01-dev980")
-            }
-            if (requested.id.id.startsWith("com.squareup.sqldelight")) {
-                useVersion("1.5.5")
-            }
-        }
-    }
 }
 
 dependencyResolutionManagement {

@@ -1,4 +1,4 @@
-package com.klekchyan.harrypottermultiplatform.entity
+package com.klekchyan.harrypottermultiplatform.domain.entity
 
 data class Character(
     val id: String,

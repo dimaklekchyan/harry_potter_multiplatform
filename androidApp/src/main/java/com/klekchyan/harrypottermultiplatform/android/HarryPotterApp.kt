@@ -1,7 +1,7 @@
 package com.klekchyan.harrypottermultiplatform.android
 
 import android.app.Application
-import com.klekchyan.harrypottermultiplatform.PlatformSDK
+import com.klekchyan.harrypottermultiplatform.platform.PlatformSDK
 import com.klekchyan.harrypottermultiplatform.platform.PlatformConfiguration
 
 class HarryPotterApp: Application() {

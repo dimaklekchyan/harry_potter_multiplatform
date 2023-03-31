@@ -1,5 +1,7 @@
-package com.klekchyan.harrypottermultiplatform.database
+package com.klekchyan.harrypottermultiplatform.di
 
+import com.klekchyan.harrypottermultiplatform.data.Database
+import com.klekchyan.harrypottermultiplatform.data.DatabaseDriverFactory
 import org.kodein.di.DI
 import org.kodein.di.bindSingleton
 import org.kodein.di.instance

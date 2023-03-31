@@ -1,10 +1,9 @@
-package com.klekchyan.harrypottermultiplatform
+package com.klekchyan.harrypottermultiplatform.platform
 
-import com.klekchyan.harrypottermultiplatform.database.databaseModule
+import com.klekchyan.harrypottermultiplatform.di.databaseModule
 import com.klekchyan.harrypottermultiplatform.di.Inject
-import com.klekchyan.harrypottermultiplatform.network.networkModule
-import com.klekchyan.harrypottermultiplatform.platform.PlatformConfiguration
-import com.klekchyan.harrypottermultiplatform.repository.repositoryModule
+import com.klekchyan.harrypottermultiplatform.di.networkModule
+import com.klekchyan.harrypottermultiplatform.di.domainModule
 import org.kodein.di.DI
 import org.kodein.di.bindSingleton
 import org.kodein.di.direct
@@ -25,7 +24,7 @@ object PlatformSDK {
                     platformModule,
                     networkModule,
                     databaseModule,
-                    repositoryModule
+                    domainModule
                 )
             }.direct
         )

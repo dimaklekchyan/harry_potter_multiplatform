@@ -1,6 +1,6 @@
-package com.klekchyan.harrypottermultiplatform.repository
+package com.klekchyan.harrypottermultiplatform.domain.repository
 
-import com.klekchyan.harrypottermultiplatform.entity.Character
+import com.klekchyan.harrypottermultiplatform.domain.entity.Character
 
 interface HarryPotterRepository {
     @Throws(Exception::class)

@@ -34,6 +34,10 @@ kotlin {
                 implementation(Dependencies.Ktor.logging)
                 implementation(Dependencies.Ktor.kotlinxSerialization)
                 implementation(Dependencies.SQLDelight.runtime)
+                implementation(Dependencies.KViewModel.core)
+                implementation(Dependencies.KViewModel.compose)
+                implementation(Dependencies.Odyssey.core)
+                implementation(Dependencies.Odyssey.compose)
             }
         }
         val commonTest by getting {
@@ -45,6 +49,19 @@ kotlin {
             dependencies {
                 implementation(Dependencies.Ktor.android)
                 implementation(Dependencies.SQLDelight.androidDriver)
+
+                implementation(Dependencies.KViewModel.core)
+                implementation(Dependencies.KViewModel.compose)
+                implementation(Dependencies.KViewModel.odyssey)
+                implementation(Dependencies.Odyssey.core)
+                implementation(Dependencies.Odyssey.compose)
+
+                implementation(Dependencies.Compose.ui)
+                implementation(Dependencies.Compose.toolingUi)
+                implementation(Dependencies.Compose.toolingPreview)
+                implementation(Dependencies.Compose.foundation)
+                implementation(Dependencies.Compose.material)
+                implementation(Dependencies.Compose.activity)
             }
         }
         val androidUnitTest by getting
@@ -59,6 +76,9 @@ kotlin {
             dependencies {
                 implementation(Dependencies.Ktor.darwin)
                 implementation(Dependencies.SQLDelight.nativeDriver)
+
+                implementation(Dependencies.KViewModel.core)
+                implementation(Dependencies.Odyssey.core)
             }
         }
         val iosX64Test by getting
@@ -79,6 +99,12 @@ android {
     defaultConfig {
         minSdk = 26
         targetSdk = 33
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Dependencies.Compose.compilerVersion
     }
 }
 

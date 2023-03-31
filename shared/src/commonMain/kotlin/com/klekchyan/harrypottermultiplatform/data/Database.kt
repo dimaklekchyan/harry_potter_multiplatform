@@ -1,7 +1,7 @@
-package com.klekchyan.harrypottermultiplatform.database
+package com.klekchyan.harrypottermultiplatform.data
 
-import com.klekchyan.harrypottermultiplatform.entity.Character
-import com.klekchyan.harrypottermultiplatform.entity.Wand
+import com.klekchyan.harrypottermultiplatform.domain.entity.Character
+import com.klekchyan.harrypottermultiplatform.domain.entity.Wand
 import com.klekchyan.harrypottermultiplatform.network.entity.CharacterApiEntity
 import com.klekchyan.harrypottermultiplatform.network.entity.WandApiEntity
 import com.klekchyan.harrypottermultiplatform.shared.cache.AppDatabase

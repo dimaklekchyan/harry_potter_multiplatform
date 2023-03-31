@@ -6,7 +6,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.klekchyan.harrypottermultiplatform.repository.HarryPotterRepository
+import com.klekchyan.harrypottermultiplatform.domain.entity.Character
+import com.klekchyan.harrypottermultiplatform.domain.repository.HarryPotterRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -14,7 +15,7 @@ class MainScreenViewModel(
     private val repository: HarryPotterRepository
 ): ViewModel() {
 
-    var characters by mutableStateOf<List<com.klekchyan.harrypottermultiplatform.entity.Character>>(emptyList())
+    var characters by mutableStateOf<List<Character>>(emptyList())
         private set
 
     init {

@@ -1,7 +1,6 @@
-package com.klekchyan.harrypottermultiplatform.database
+package com.klekchyan.harrypottermultiplatform.data
 
 import com.klekchyan.harrypottermultiplatform.platform.PlatformConfiguration
-import com.klekchyan.harrypottermultiplatform.shared.cache.AppDatabase
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.drivers.native.NativeSqliteDriver
 

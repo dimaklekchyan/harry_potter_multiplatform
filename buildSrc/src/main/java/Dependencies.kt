@@ -4,7 +4,7 @@ object Dependencies {
         const val version = "1.8.10"
         private const val coroutinesVersion = "1.6.4"
         private const val serializationVersion = "1.4.1"
-        private const val serializationGradlePluginVersion = "1.7.10"
+        private const val serializationGradlePluginVersion = "1.8.10"
 
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val serializationGradlePlugin = "org.jetbrains.kotlin:kotlin-serialization:$serializationGradlePluginVersion"
