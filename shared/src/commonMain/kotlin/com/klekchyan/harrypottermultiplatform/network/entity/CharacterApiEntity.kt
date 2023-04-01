@@ -19,8 +19,8 @@ data class CharacterApiEntity(
 //    val hairColour: String,
     val wand: WandApiEntity? = null,
 //    val patronus: String,
-//    val hogwartsStudent: Boolean,
-//    val hogwartsStaff: Boolean,
+    val hogwartsStudent: Boolean,
+    val hogwartsStaff: Boolean,
 //    val actor: String,
 //    @SerialName("alternate_actors")
 //    val alternateActors: List<String>,

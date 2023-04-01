@@ -30,7 +30,9 @@ class Database(databaseDriverFactory: DatabaseDriverFactory) {
         queries.insertCharacter(
             id = character.id,
             name = character.name,
-            species = character.species
+            species = character.species,
+            hogwartsStudent = character.hogwartsStudent,
+            hogwartsStaff = character.hogwartsStaff
         )
     }
 
@@ -54,6 +56,8 @@ class Database(databaseDriverFactory: DatabaseDriverFactory) {
         id: String,
         name: String,
         species: String,
+        hogwartsStudent: Boolean,
+        hogwartsStaff: Boolean,
         id_: Long?,
         wood: String?,
         core: String?,
@@ -63,6 +67,8 @@ class Database(databaseDriverFactory: DatabaseDriverFactory) {
         id = id,
         name = name,
         species = species,
+        hogwartsStudent = hogwartsStudent,
+        hogwartsStaff = hogwartsStaff,
         wand = allNotNull(wood, core) { woodNotNull, coreNotNull -> Wand(woodNotNull, coreNotNull, length) }
     )
 }

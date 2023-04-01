@@ -9,6 +9,6 @@ import ru.alexgladkov.odyssey.compose.local.LocalRootController
 @Composable
 fun SplashScreen() {
     Text("SplashScreen")
-//    val rootController = LocalRootController.current
-//    rootController.present(NavigationTree.Main.MainScreen.name)
+    val rootController = LocalRootController.current
+    rootController.present(NavigationTree.Main.MainFlow.name)
 }

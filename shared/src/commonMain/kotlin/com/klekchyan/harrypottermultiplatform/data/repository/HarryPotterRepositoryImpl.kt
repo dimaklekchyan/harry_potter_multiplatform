@@ -22,4 +22,14 @@ class HarryPotterRepositoryImpl(
             database.getAllCharacters()
         }
     }
+
+    @Throws(Exception::class)
+    override suspend fun getStudents(forceReload: Boolean): List<Character> {
+        return getCharacters(forceReload).filter { it.hogwartsStudent }
+    }
+
+    @Throws(Exception::class)
+    override suspend fun getStaff(forceReload: Boolean): List<Character> {
+        return getCharacters(forceReload).filter { it.hogwartsStaff }
+    }
 }

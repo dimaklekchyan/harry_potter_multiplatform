@@ -1,7 +1,9 @@
 CREATE TABLE CharacterDTO (
     id              TEXT NOT NULL PRIMARY KEY,
     name            TEXT NOT NULL,
-    species         TEXT NOT NULL
+    species         TEXT NOT NULL,
+    hogwartsStudent INTEGER AS Boolean NOT NULL DEFAULT 0,
+    hogwartsStaff   INTEGER AS Boolean NOT NULL DEFAULT 0
 );
 
 CREATE TABLE WandDTO (
@@ -13,8 +15,8 @@ CREATE TABLE WandDTO (
 );
 
 insertCharacter:
-INSERT OR REPLACE INTO CharacterDTO(id, name, species)
-VALUES (?, ?, ?);
+INSERT OR REPLACE INTO CharacterDTO(id, name, species, hogwartsStudent, hogwartsStaff)
+VALUES (?, ?, ?, ?, ?);
 
 insertWand:
 INSERT OR REPLACE INTO WandDTO(wood, core, length, character_id)
