@@ -2,6 +2,7 @@ object Dependencies {
 
     object Kotlin {
         const val version = "1.8.10"
+        private const val stdlibVersion = "1.7.10"
         private const val coroutinesVersion = "1.6.4"
         private const val serializationVersion = "1.4.1"
         private const val serializationGradlePluginVersion = "1.8.10"
@@ -9,13 +10,14 @@ object Dependencies {
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val serializationGradlePlugin = "org.jetbrains.kotlin:kotlin-serialization:$serializationGradlePluginVersion"
 
+        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$stdlibVersion"
         const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion"
         const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
         const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     }
 
     object Android {
-        const val gradlePlugin = "com.android.tools.build:gradle:7.2.2"
+        const val gradlePlugin = "com.android.tools.build:gradle:7.4.2"
     }
 
     object Compose {
@@ -27,7 +29,7 @@ object Dependencies {
         private const val constraintLayoutVersion = "1.0.1"
         private const val activityVersion = "1.4.0"
 
-        const val gradlePlugin = "org.jetbrains.compose:compose-gradle-plugin:1.4.0-alpha01-dev980"
+        const val gradlePlugin = "org.jetbrains.compose:compose-gradle-plugin:1.3.1"
 
         const val ui = "androidx.compose.ui:ui:$uiVersion"
         const val foundation = "androidx.compose.foundation:foundation:$foundationVersion"
