@@ -26,7 +26,6 @@ kotlin {
         podfile = project.file("../iosApp/Podfile")
         framework {
             isStatic = true
-            transitiveExport = false
             baseName = "shared"
         }
     }
@@ -109,4 +108,5 @@ sqldelight {
     database("AppDatabase") {
         packageName = "com.klekchyan.harrypottermultiplatform.shared.cache"
     }
+    linkSqlite = true
 }

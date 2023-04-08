@@ -3,13 +3,12 @@ import shared
 
 @main
 struct iOSApp: App {
-//    let repository = HarryPotterRepositoryImpl(
-//        database: Database(databaseDriverFactory: DatabaseDriverFactory()),
-//        api: HarryPotterApi()
-//    )
+    init() {
+        PlatformSDK().doInit(platformConfiguration: PlatformConfiguration())
+    }
 	var body: some Scene {
 		WindowGroup {
-//            ContentView(viewModel: .init(repository: repository))
+            ContentView()
 		}
 	}
 }
