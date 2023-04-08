@@ -2,15 +2,12 @@ object Dependencies {
 
     object Kotlin {
         const val version = "1.8.10"
-        private const val stdlibVersion = "1.7.10"
         private const val coroutinesVersion = "1.6.4"
         private const val serializationVersion = "1.4.1"
-        private const val serializationGradlePluginVersion = "1.8.10"
 
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
-        const val serializationGradlePlugin = "org.jetbrains.kotlin:kotlin-serialization:$serializationGradlePluginVersion"
+        const val serializationGradlePlugin = "org.jetbrains.kotlin:kotlin-serialization:$version"
 
-        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$stdlibVersion"
         const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion"
         const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
         const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
@@ -87,13 +84,6 @@ object Dependencies {
         const val compose = "io.github.alexgladkov:odyssey-compose:$version"
     }
 
-    object Lifecycle {
-        private const val viewModelVersion = "2.5.1"
-        private const val runtimeVersion = "2.5.1"
-
-        const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$runtimeVersion"
-        const val viewModelCompose =  "androidx.lifecycle:lifecycle-viewmodel-compose:$viewModelVersion"
-    }
     object Tests {
         private const val junitVersion = "4.13.2"
         private const val extVersion = "1.1.3"

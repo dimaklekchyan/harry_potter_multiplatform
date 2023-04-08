@@ -13,7 +13,6 @@ repositories {
 
 dependencies {
     implementation(Dependencies.Kotlin.gradlePlugin)
-    implementation(enforcedPlatform(Dependencies.Kotlin.stdlib))
     implementation(Dependencies.Kotlin.serializationGradlePlugin)
     implementation(Dependencies.Android.gradlePlugin)
     implementation(Dependencies.Compose.gradlePlugin)
