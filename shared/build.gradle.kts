@@ -2,6 +2,7 @@ plugins {
     kotlin("native.cocoapods")
     kotlin("multiplatform")
     kotlin("plugin.serialization")
+//    id("org.jetbrains.compose")
     id("com.android.library")
     id("com.squareup.sqldelight")
 }
@@ -33,6 +34,10 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+//                implementation(compose.runtime)
+//                implementation(compose.foundation)
+//                implementation(compose.material)
+
                 implementation(Dependencies.Kodein.di)
 
                 implementation(Dependencies.Kotlin.coroutinesCore)
