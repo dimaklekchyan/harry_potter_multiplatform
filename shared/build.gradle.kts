@@ -2,7 +2,7 @@ plugins {
     kotlin("native.cocoapods")
     kotlin("multiplatform")
     kotlin("plugin.serialization")
-//    id("org.jetbrains.compose")
+    id("org.jetbrains.compose")
     id("com.android.library")
     id("com.squareup.sqldelight")
 }
@@ -11,7 +11,7 @@ kotlin {
     android {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "1.8"
+                jvmTarget = "17"
             }
         }
     }
@@ -34,9 +34,9 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-//                implementation(compose.runtime)
-//                implementation(compose.foundation)
-//                implementation(compose.material)
+                implementation(compose.runtime)
+                implementation(compose.foundation)
+                implementation(compose.material)
 
                 implementation(Dependencies.Kodein.di)
 
@@ -50,10 +50,9 @@ kotlin {
                 implementation(Dependencies.SQLDelight.runtime)
 
                 implementation(Dependencies.KViewModel.core)
-                implementation(Dependencies.KViewModel.compose)
+                implementation(Dependencies.KViewModel.odyssey)
 
                 implementation(Dependencies.Odyssey.core)
-                implementation(Dependencies.Odyssey.compose)
             }
         }
         val androidMain by getting {
@@ -101,11 +100,12 @@ android {
         minSdk = 26
         targetSdk = 33
     }
-    buildFeatures {
-        compose = true
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.Compose.compilerVersion
+    kotlin {
+        jvmToolchain(17)
     }
 }
 

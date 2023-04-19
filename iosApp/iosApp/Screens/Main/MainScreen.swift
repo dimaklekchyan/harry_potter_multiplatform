@@ -7,23 +7,18 @@
 //
 
 import SwiftUI
+import shared
+
+struct ComposeView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        MainKt.MainViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+}
 
 struct MainScreen: View {
     var body: some View {
-        VStack {
-            VStack {
-                Spacer().frame(height: 36)
-                Text("Characters")
-                    .foregroundColor(Color.onPrimary)
-                    .fontWeight(.bold)
-                    .font(.system(size: 24))
-            }
-        }
-    }
-}
-
-struct MainScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        MainScreen().background(Color.secondaryBackground)
+        ComposeView().ignoresSafeArea(.keyboard)
     }
 }

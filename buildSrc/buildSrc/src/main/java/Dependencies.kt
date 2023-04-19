@@ -26,7 +26,7 @@ object Dependencies {
         private const val constraintLayoutVersion = "1.0.1"
         private const val activityVersion = "1.4.0"
 
-        const val gradlePlugin = "org.jetbrains.compose:compose-gradle-plugin:1.3.1"
+        const val gradlePlugin = "org.jetbrains.compose:compose-gradle-plugin:1.4.0"
 
         const val ui = "androidx.compose.ui:ui:$uiVersion"
         const val foundation = "androidx.compose.foundation:foundation:$foundationVersion"
