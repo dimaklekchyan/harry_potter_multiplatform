@@ -39,6 +39,7 @@ kotlin {
                 implementation(compose.material)
 
                 implementation(Dependencies.Kodein.di)
+                implementation(Dependencies.Kodein.frameworkCompose)
 
                 implementation(Dependencies.Kotlin.coroutinesCore)
 
@@ -49,42 +50,39 @@ kotlin {
 
                 implementation(Dependencies.SQLDelight.runtime)
 
-                implementation(Dependencies.KViewModel.core)
-                implementation(Dependencies.KViewModel.odyssey)
-
-                implementation(Dependencies.Odyssey.core)
+                implementation(Dependencies.Voyager.navigator)
+                implementation(Dependencies.Voyager.tabNavigator)
+                implementation(Dependencies.Voyager.transitions)
+                implementation(Dependencies.Voyager.bottomSheetNavigator)
+                implementation(Dependencies.Voyager.kodein)
             }
         }
         val androidMain by getting {
             dependencies {
                 implementation(Dependencies.Ktor.android)
 
+                implementation(Dependencies.Kodein.di)
+                implementation(Dependencies.Kodein.frameworkCompose)
+
                 implementation(Dependencies.SQLDelight.androidDriver)
 
-                implementation(Dependencies.KViewModel.core)
-                implementation(Dependencies.KViewModel.compose)
-                implementation(Dependencies.KViewModel.odyssey)
-
-                implementation(Dependencies.Odyssey.core)
-                implementation(Dependencies.Odyssey.compose)
-
-                implementation(Dependencies.Compose.ui)
-                implementation(Dependencies.Compose.toolingUi)
-                implementation(Dependencies.Compose.toolingPreview)
-                implementation(Dependencies.Compose.foundation)
-                implementation(Dependencies.Compose.material)
                 implementation(Dependencies.Compose.activity)
+
+                implementation(Dependencies.Voyager.navigator)
+                implementation(Dependencies.Voyager.kodein)
             }
         }
         val iosMain by getting {
             dependencies {
                 implementation(Dependencies.Ktor.darwin)
 
+                implementation(Dependencies.Kodein.di)
+                implementation(Dependencies.Kodein.frameworkCompose)
+
                 implementation(Dependencies.SQLDelight.nativeDriver)
 
-                implementation(Dependencies.KViewModel.core)
-
-                implementation(Dependencies.Odyssey.core)
+                implementation(Dependencies.Voyager.navigator)
+                implementation(Dependencies.Voyager.kodein)
             }
         }
         val iosSimulatorArm64Main by getting {

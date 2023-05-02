@@ -1,8 +1,8 @@
 import SwiftUI
 import shared
 
-struct ContentView: View {
-    var body: some View {
-        MainScreen().background(Color.secondaryBackground)
-    }
-}
+//struct ContentView: View {
+//    var body: some View {
+////        MainScreen().background(Color.secondaryBackground)
+//    }
+//}

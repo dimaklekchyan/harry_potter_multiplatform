@@ -24,6 +24,11 @@ class HarryPotterRepositoryImpl(
     }
 
     @Throws(Exception::class)
+    override suspend fun getSpecificCharacter(id: String): Character? {
+        return database.getAllCharacters().firstOrNull { it.id == id }
+    }
+
+    @Throws(Exception::class)
     override suspend fun getStudents(forceReload: Boolean): List<Character> {
         return getCharacters(forceReload).filter { it.hogwartsStudent }
     }

@@ -50,7 +50,6 @@ dependencies {
 
     implementation(Dependencies.Kotlin.coroutinesAndroid)
 
-    implementation(Dependencies.Kodein.frameworkAndroid)
     implementation(Dependencies.Kodein.frameworkCompose)
     implementation(Dependencies.Kodein.di)
 }

@@ -1,33 +1,40 @@
 package com.klekchyan.harrypottermultiplatform.presentation.main
 
-import com.adeo.kviewmodel.BaseSharedViewModel
-import com.klekchyan.harrypottermultiplatform.di.Inject
+import cafe.adriel.voyager.core.model.coroutineScope
 import com.klekchyan.harrypottermultiplatform.domain.repository.HarryPotterRepository
-import com.klekchyan.harrypottermultiplatform.presentation.main.models.MainAction
-import com.klekchyan.harrypottermultiplatform.presentation.main.models.MainEvent
-import com.klekchyan.harrypottermultiplatform.presentation.main.models.MainViewState
+import com.klekchyan.harrypottermultiplatform.presentation.BaseViewModel
+import com.klekchyan.harrypottermultiplatform.presentation.character.models.CharacterScreenAction
+import com.klekchyan.harrypottermultiplatform.presentation.character.models.CharacterScreenEvent
+import com.klekchyan.harrypottermultiplatform.presentation.character.models.CharacterScreenState
+import com.klekchyan.harrypottermultiplatform.presentation.main.models.MainScreenAction
+import com.klekchyan.harrypottermultiplatform.presentation.main.models.MainScreenEvent
+import com.klekchyan.harrypottermultiplatform.presentation.main.models.MainScreenState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainScreenViewModel: BaseSharedViewModel<MainViewState, MainAction, MainEvent>(
-    initialState = MainViewState(characters = emptyList(), isLoading = false, error = null)
+class MainScreenViewModel(
+    private val repository: HarryPotterRepository
+): BaseViewModel<MainScreenState, MainScreenAction, MainScreenEvent>(
+    initialState = MainScreenState(
+        characters = emptyList(),
+        isLoading = true,
+        error = null
+    )
 ) {
 
-    private val repository: HarryPotterRepository = Inject.instance()
-
-    override fun obtainEvent(viewEvent: MainEvent) {
+    override fun obtainEvent(viewEvent: MainScreenEvent) {
         when(viewEvent) {
-            is MainEvent.AllCharactersClick -> getAllCharacters()
-            is MainEvent.StudentsClick -> getStudents()
-            is MainEvent.StaffClick -> getStaff()
-            is MainEvent.SpecificCharacterClick -> {}
+            is MainScreenEvent.AllCharactersClick -> getAllCharacters()
+            is MainScreenEvent.StudentsClick -> getStudents()
+            is MainScreenEvent.StaffClick -> getStaff()
+            is MainScreenEvent.SpecificCharacterClick -> {}
         }
     }
 
     private fun getAllCharacters() {
         viewState = viewState.copy(isLoading = true)
-        viewModelScope.launch(Dispatchers.Default) {
+        coroutineScope.launch(Dispatchers.Default) {
             kotlin.runCatching {
                 repository.getCharacters(true)
             }.onFailure { error ->
@@ -44,7 +51,7 @@ class MainScreenViewModel: BaseSharedViewModel<MainViewState, MainAction, MainEv
 
     private fun getStudents() {
         viewState = viewState.copy(isLoading = true)
-        viewModelScope.launch(Dispatchers.Default) {
+        coroutineScope.launch(Dispatchers.Default) {
             kotlin.runCatching {
                 repository.getStudents(true)
             }.onFailure { error ->
@@ -61,7 +68,7 @@ class MainScreenViewModel: BaseSharedViewModel<MainViewState, MainAction, MainEv
 
     private fun getStaff() {
         viewState = viewState.copy(isLoading = true)
-        viewModelScope.launch(Dispatchers.Default) {
+        coroutineScope.launch(Dispatchers.Default) {
             kotlin.runCatching {
                 repository.getStaff(true)
             }.onFailure { error ->
