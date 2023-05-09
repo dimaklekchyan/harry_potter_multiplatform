@@ -11,6 +11,7 @@ fun ComponentActivity.setupNavigation() {
 
     setContent {
         withDI(Inject.di.di) {
+            TransparentSystemBars()
             Navigator(SplashScreen)
         }
     }

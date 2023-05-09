@@ -8,6 +8,7 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.klekchyan.harrypottermultiplatform.presentation.AppWindowInsets
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -19,10 +20,13 @@ fun AppScaffold(
     bottomBar: @Composable () -> Unit = {},
     content: @Composable () -> Unit,
 ) {
-    
     Scaffold(
         modifier = modifier
-            .background(backgroundColor),
+            .background(backgroundColor)
+            .padding(
+                top = AppWindowInsets().statusBarInset,
+                bottom = AppWindowInsets().navigationBarInset
+            ),
         scaffoldState = scaffoldState,
         topBar = topBar,
         bottomBar = bottomBar,

@@ -39,8 +39,6 @@ kotlin {
                 implementation(compose.material)
                 implementation(compose.materialIconsExtended)
 
-//                implementation(Dependencies.Accompanist.systemUiController)
-
                 implementation(Dependencies.Kodein.di)
                 implementation(Dependencies.Kodein.frameworkCompose)
 
@@ -70,6 +68,7 @@ kotlin {
                 implementation(Dependencies.SQLDelight.androidDriver)
 
                 implementation(Dependencies.Compose.activity)
+                implementation(Dependencies.Accompanist.systemUiController)
 
                 implementation(Dependencies.Voyager.navigator)
                 implementation(Dependencies.Voyager.kodein)
