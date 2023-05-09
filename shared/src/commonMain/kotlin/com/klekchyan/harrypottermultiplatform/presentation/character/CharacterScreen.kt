@@ -10,7 +10,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.kodein.rememberScreenModel
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import com.klekchyan.harrypottermultiplatform.presentation.character.models.CharacterScreenEvent
+import com.klekchyan.harrypottermultiplatform.presentation.components.scaffold.AppNestedScreenScaffold
 
 internal class CharacterScreen(val id: String): Screen {
     @Composable
@@ -22,16 +25,24 @@ internal class CharacterScreen(val id: String): Screen {
 
 @Composable
 internal fun CharacterScreenContent(id: String, vm: CharacterScreenViewModel) {
+    val navigator = LocalNavigator.currentOrThrow
+
     val state = vm.viewStates.collectAsState()
 
     LaunchedEffect(Unit) {
         vm.obtainEvent(CharacterScreenEvent.GetCharacter(id))
     }
 
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+    AppNestedScreenScaffold(
+        onNavigateBackClick = {
+            navigator.pop()
+        }
     ) {
-        Text("${state.value.character?.name}")
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Text("${state.value.character?.name}")
+        }
     }
 }

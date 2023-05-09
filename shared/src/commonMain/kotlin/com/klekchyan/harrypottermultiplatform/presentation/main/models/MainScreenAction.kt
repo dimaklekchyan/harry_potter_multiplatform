@@ -1,5 +1,7 @@
 package com.klekchyan.harrypottermultiplatform.presentation.main.models
 
-sealed class MainScreenAction {
+import com.klekchyan.harrypottermultiplatform.presentation.BaseAction
+
+sealed class MainScreenAction: BaseAction() {
     class OpenSpecificCharacter(val id: String): MainScreenAction()
 }

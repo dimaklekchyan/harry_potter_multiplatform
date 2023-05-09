@@ -3,9 +3,6 @@ package com.klekchyan.harrypottermultiplatform.presentation.main
 import cafe.adriel.voyager.core.model.coroutineScope
 import com.klekchyan.harrypottermultiplatform.domain.repository.HarryPotterRepository
 import com.klekchyan.harrypottermultiplatform.presentation.BaseViewModel
-import com.klekchyan.harrypottermultiplatform.presentation.character.models.CharacterScreenAction
-import com.klekchyan.harrypottermultiplatform.presentation.character.models.CharacterScreenEvent
-import com.klekchyan.harrypottermultiplatform.presentation.character.models.CharacterScreenState
 import com.klekchyan.harrypottermultiplatform.presentation.main.models.MainScreenAction
 import com.klekchyan.harrypottermultiplatform.presentation.main.models.MainScreenEvent
 import com.klekchyan.harrypottermultiplatform.presentation.main.models.MainScreenState
@@ -28,7 +25,9 @@ class MainScreenViewModel(
             is MainScreenEvent.AllCharactersClick -> getAllCharacters()
             is MainScreenEvent.StudentsClick -> getStudents()
             is MainScreenEvent.StaffClick -> getStaff()
-            is MainScreenEvent.SpecificCharacterClick -> {}
+            is MainScreenEvent.SpecificCharacterClick -> {
+                sendAction(MainScreenAction.OpenSpecificCharacter(viewEvent.id))
+            }
         }
     }
 

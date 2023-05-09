@@ -37,6 +37,9 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)
+                implementation(compose.materialIconsExtended)
+
+//                implementation(Dependencies.Accompanist.systemUiController)
 
                 implementation(Dependencies.Kodein.di)
                 implementation(Dependencies.Kodein.frameworkCompose)

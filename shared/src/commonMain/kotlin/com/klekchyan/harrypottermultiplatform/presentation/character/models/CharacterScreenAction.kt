@@ -1,4 +1,6 @@
 package com.klekchyan.harrypottermultiplatform.presentation.character.models
 
-sealed class CharacterScreenAction {
+import com.klekchyan.harrypottermultiplatform.presentation.BaseAction
+
+sealed class CharacterScreenAction: BaseAction() {
 }

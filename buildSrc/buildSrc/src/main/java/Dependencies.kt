@@ -99,5 +99,10 @@ object Dependencies {
         const val appcompat = "androidx.appcompat:appcompat:$appcompatVersion"
         const val material = "com.google.android.material:material:$materialVersion"
     }
+    object Accompanist {
+        private const val version = "0.30.1"
 
+        const val systemUiController = "com.google.accompanist:accompanist-systemuicontroller:$version"
+        const val placeholder = "com.google.accompanist:accompanist-placeholder:$version"
+    }
 }
