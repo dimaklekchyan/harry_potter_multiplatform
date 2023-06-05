@@ -43,6 +43,7 @@ kotlin {
                 implementation(Dependencies.Kodein.frameworkCompose)
 
                 implementation(Dependencies.Kotlin.coroutinesCore)
+                implementation(Dependencies.Kotlin.collections)
 
                 implementation(Dependencies.Ktor.core)
                 implementation(Dependencies.Ktor.negotiation)
@@ -54,7 +55,6 @@ kotlin {
                 implementation(Dependencies.Voyager.navigator)
                 implementation(Dependencies.Voyager.tabNavigator)
                 implementation(Dependencies.Voyager.transitions)
-                implementation(Dependencies.Voyager.bottomSheetNavigator)
                 implementation(Dependencies.Voyager.kodein)
             }
         }

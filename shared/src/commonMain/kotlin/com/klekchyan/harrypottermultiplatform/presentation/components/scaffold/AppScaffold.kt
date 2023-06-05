@@ -8,14 +8,16 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.klekchyan.harrypottermultiplatform.presentation.AppWindowInsets
+import com.klekchyan.harrypottermultiplatform.presentation.components.AppWindowInsets
+import com.klekchyan.harrypottermultiplatform.presentation.components.SystemBars
+import com.klekchyan.harrypottermultiplatform.presentation.theme.AppTheme
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun AppScaffold(
     modifier: Modifier = Modifier,
     scaffoldState: ScaffoldState = rememberScaffoldState(),
-    backgroundColor: Color = Color.White,
+    backgroundColor: Color = AppTheme.colors.backgroundPrimary,
     topBar: @Composable () -> Unit = {},
     bottomBar: @Composable () -> Unit = {},
     content: @Composable () -> Unit,

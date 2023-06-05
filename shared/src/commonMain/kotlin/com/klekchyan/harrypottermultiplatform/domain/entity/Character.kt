@@ -1,5 +1,8 @@
 package com.klekchyan.harrypottermultiplatform.domain.entity
 
+import androidx.compose.runtime.Stable
+
+@Stable
 data class Character(
     val id: String,
     val name: String,
@@ -23,6 +26,7 @@ data class Character(
 //    val image: String
 )
 
+@Stable
 data class Wand(
     val wood: String,
     val core: String,

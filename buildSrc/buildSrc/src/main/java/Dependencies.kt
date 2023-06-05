@@ -4,6 +4,7 @@ object Dependencies {
         const val version = "1.8.20"
         private const val coroutinesVersion = "1.6.4"
         private const val serializationVersion = "1.4.1"
+        private const val collectionsVersion = "0.3.5"
 
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val serializationGradlePlugin = "org.jetbrains.kotlin:kotlin-serialization:$version"
@@ -11,6 +12,7 @@ object Dependencies {
         const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion"
         const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
         const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+        const val collections = "org.jetbrains.kotlinx:kotlinx-collections-immutable:$collectionsVersion"
     }
 
     object Android {
@@ -18,12 +20,11 @@ object Dependencies {
     }
 
     object Compose {
-        const val uiVersion = "1.4.0"
-        const val runtimeVersion = "1.4.0"
-        const val foundationVersion = "1.4.0"
-        const val materialVersion = "1.4.0"
-        const val compilerVersion = "1.4.5"
-        private const val constraintLayoutVersion = "1.0.1"
+        const val uiVersion = "1.4.3"
+        const val runtimeVersion = "1.4.3"
+        const val foundationVersion = "1.4.3"
+        const val materialVersion = "1.4.3"
+        const val compilerVersion = "1.4.6"
         private const val activityVersion = "1.4.0"
 
         const val gradlePlugin = "org.jetbrains.compose:compose-gradle-plugin:1.4.0"
@@ -37,7 +38,6 @@ object Dependencies {
         const val uiTest =  "androidx.compose.ui:ui-test-junit4:$uiVersion"
         const val activity =  "androidx.activity:activity-compose:$activityVersion"
         const val runtime =  "androidx.compose.runtime:runtime:$runtimeVersion"
-        const val constraintLayout =  "androidx.constraintlayout:constraintlayout-compose:$constraintLayoutVersion"
     }
 
     object Kodein {
@@ -74,7 +74,6 @@ object Dependencies {
         private const val version = "1.0.0-rc05"
 
         const val navigator = "cafe.adriel.voyager:voyager-navigator:$version"
-        const val bottomSheetNavigator = "cafe.adriel.voyager:voyager-bottom-sheet-navigator:$version"
         const val tabNavigator = "cafe.adriel.voyager:voyager-tab-navigator:$version"
         const val transitions = "cafe.adriel.voyager:voyager-transitions:$version"
         const val kodein = "cafe.adriel.voyager:voyager-kodein:$version"

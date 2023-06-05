@@ -1,8 +1,8 @@
 package com.klekchyan.harrypottermultiplatform.di
 
-import com.klekchyan.harrypottermultiplatform.network.AppJsonConfiguration
-import com.klekchyan.harrypottermultiplatform.network.HarryPotterApi
-import com.klekchyan.harrypottermultiplatform.network.HttpEngineFactory
+import com.klekchyan.harrypottermultiplatform.data.network.AppJsonConfiguration
+import com.klekchyan.harrypottermultiplatform.data.network.HarryPotterApi
+import com.klekchyan.harrypottermultiplatform.data.network.HttpEngineFactory
 import io.ktor.client.*
 import io.ktor.client.plugins.*
 import io.ktor.client.plugins.contentnegotiation.*

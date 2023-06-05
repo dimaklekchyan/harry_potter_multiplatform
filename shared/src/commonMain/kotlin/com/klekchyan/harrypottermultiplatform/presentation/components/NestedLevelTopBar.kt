@@ -1,16 +1,9 @@
 package com.klekchyan.harrypottermultiplatform.presentation.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.requiredHeightIn
-import androidx.compose.foundation.layout.requiredWidth
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ChevronLeft
@@ -20,14 +13,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.klekchyan.harrypottermultiplatform.presentation.theme.AppTheme
 
 @Composable
 fun NestedLevelTopBar(
     modifier: Modifier = Modifier,
     onNavigateBackClick: () -> Unit,
-    backgroundColor: Color = Color.White,
-    contentColor: Color = Color.Black,
-    title: String?,
+    backgroundColor: Color = AppTheme.colors.primary,
+    contentColor: Color = AppTheme.colors.onPrimary,
+    title: String? = null,
     scale: Float = 1f
 ) {
     Box(
@@ -61,7 +55,7 @@ fun NestedLevelTopBar(
                     text = it,
                     color = contentColor,
                     textAlign = TextAlign.Center,
-                    style = MaterialTheme.typography.h4,
+                    style = AppTheme.typography.h4
                 )
             }
         }

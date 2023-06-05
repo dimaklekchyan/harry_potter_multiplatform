@@ -6,7 +6,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.CornerSize
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.*
@@ -21,16 +20,17 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import com.klekchyan.harrypottermultiplatform.presentation.components.NestedLevelTopBar
 import com.klekchyan.harrypottermultiplatform.presentation.components.TopBarDefaults
+import com.klekchyan.harrypottermultiplatform.presentation.theme.AppTheme
 
 @Composable
 fun AppNestedScreenScaffold(
     modifier: Modifier = Modifier,
     scaffoldState: ScaffoldState = rememberScaffoldState(),
     isCollapsible: Boolean = true,
-    backgroundColor: Color = Color.White,
-    topBarBackgroundColor: Color = Color.White,
+    backgroundColor: Color = AppTheme.colors.backgroundPrimary,
+    topBarBackgroundColor: Color = AppTheme.colors.primary,
     topBarTitle: String? = null,
-    topBarContentColor: Color = Color.Black,
+    topBarContentColor: Color = AppTheme.colors.onPrimary,
     onNavigateBackClick: () -> Unit = {},
     content: @Composable () -> Unit
 ) {
@@ -55,40 +55,34 @@ fun AppNestedScreenScaffold(
         }
     }
 
-    Box(
+    AppScaffold(
         modifier = modifier
-            .fillMaxSize()
-            .background(backgroundColor)
-    ) {
-        AppScaffold(
-            modifier = modifier
-                .background(backgroundColor)
-                .nestedScroll(nestedScrollConnection),
-            scaffoldState = scaffoldState,
-            topBar = {
-                NestedLevelTopBar(
-                    title = topBarTitle,
-                    backgroundColor = topBarBackgroundColor,
-                    contentColor = topBarContentColor,
-                    onNavigateBackClick = onNavigateBackClick,
-                    scale = if (isCollapsible) topBarScale else TopBarDefaults.defaultScale
-                )
-            },
-            backgroundColor = backgroundColor,
-            content = {
-                Box(
-                    modifier = Modifier
-                        .clip(
-                            RoundedCornerShape(30.dp).copy(
-                                bottomStart = CornerSize(0.dp), bottomEnd = CornerSize(0.dp)
-                            )
+            .background(topBarBackgroundColor)
+            .nestedScroll(nestedScrollConnection),
+        scaffoldState = scaffoldState,
+        topBar = {
+            NestedLevelTopBar(
+                title = topBarTitle,
+                backgroundColor = topBarBackgroundColor,
+                contentColor = topBarContentColor,
+                onNavigateBackClick = onNavigateBackClick,
+                scale = if (isCollapsible) topBarScale else TopBarDefaults.defaultScale
+            )
+        },
+        backgroundColor = topBarBackgroundColor,
+        content = {
+            Box(
+                modifier = Modifier
+                    .clip(
+                        AppTheme.shapes.large.copy(
+                            bottomStart = CornerSize(0.dp), bottomEnd = CornerSize(0.dp)
                         )
-                        .background(Color.White)
-                        .fillMaxSize()
-                ) {
-                    content()
-                }
+                    )
+                    .fillMaxSize()
+                    .background(backgroundColor)
+            ) {
+                content()
             }
-        )
-    }
+        }
+    )
 }

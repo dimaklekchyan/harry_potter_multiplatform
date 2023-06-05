@@ -1,17 +1,11 @@
 package com.klekchyan.harrypottermultiplatform.domain.repository
 
+import com.klekchyan.harrypottermultiplatform.core.Either
 import com.klekchyan.harrypottermultiplatform.domain.entity.Character
+import kotlinx.coroutines.flow.Flow
 
 interface HarryPotterRepository {
-    @Throws(Exception::class)
-    suspend fun getCharacters(forceReload: Boolean): List<Character>
+    suspend fun getCharacters(forceReload: Boolean): Flow<Either<List<Character>>>
 
-    @Throws(Exception::class)
     suspend fun getSpecificCharacter(id: String): Character?
-
-    @Throws(Exception::class)
-    suspend fun getStudents(forceReload: Boolean): List<Character>
-
-    @Throws(Exception::class)
-    suspend fun getStaff(forceReload: Boolean): List<Character>
 }
